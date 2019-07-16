@@ -1,3 +1,5 @@
+package typydanych;
+
 public class DataTypes {
     public static void main(String[] args) {
         System.out.print("Liczba int: ");
