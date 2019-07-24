@@ -1,16 +1,14 @@
 package loops.HospitalPatients;
 
-import java.util.Objects;
-
 public class Patient {
 
     private String firstName;
-    private String surname;
+    private String lastName;
     private String pesel;
 
-    public Patient(String firstName, String surname, String pesel) {
+    public Patient(String firstName, String lastName, String pesel) {
         this.firstName = firstName;
-        this.surname = surname;
+        this.lastName = lastName;
         this.pesel = pesel;
     }
 
@@ -22,12 +20,12 @@ public class Patient {
         this.firstName = firstName;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPesel() {
@@ -38,18 +36,6 @@ public class Patient {
         this.pesel = pesel;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Patient patient = (Patient) o;
-        return firstName.equals(patient.firstName) &&
-                surname.equals(patient.surname) &&
-                pesel.equals(patient.pesel);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(firstName, surname, pesel);
+    public Patient() {
     }
 }

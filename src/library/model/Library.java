@@ -13,7 +13,6 @@ public class Library {
         } else {
             System.out.println("Maxymalna liczba książek została osiągnięta");
         }
-
     }
 
     public void printBooks() {
