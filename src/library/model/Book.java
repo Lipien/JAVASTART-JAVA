@@ -1,7 +1,7 @@
 package library.model;
 
 public class Book {
-    // Pola
+
     private String title;
     private String author;
     private int releaseDate;
@@ -9,7 +9,6 @@ public class Book {
     private String publisher;
     private String isbn;
 
-    // Konstruktory
     public Book(String title, String author, int releaseDate,
                 int pages, String publisher, String isbn) {
         this(title, author, releaseDate, pages, publisher);
@@ -24,7 +23,6 @@ public class Book {
         this.publisher = publisher;
     }
 
-    // settery i gettery
     public String getTitle() {
         return title;
     }
