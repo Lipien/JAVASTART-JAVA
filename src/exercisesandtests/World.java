@@ -1,4 +1,4 @@
-package loops.exercisesandtests;
+package exercisesandtests;
 
 public class World {
     public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class World {
         System.out.println(eve.getName() + " " + eve.getHeight() + "cm");
 
         System.out.println("Średni wzrost: ");
-        System.out.println(adam.avgHeight);
+        System.out.println(adam.avgHeight); //access to class Human should be realized directly: Human.avgHeight
         System.out.println(eve.avgHeight);
         System.out.println(Human.avgHeight);
     }

@@ -1,4 +1,4 @@
-package loops.exercisesandtests;
+package exercisesandtests;
 
 public class Human {
 
