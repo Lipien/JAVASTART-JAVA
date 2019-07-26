@@ -16,7 +16,7 @@ public class DebugExample {
     private static int getArraySize() {
         System.out.println("Podaj ilość liczb do wczytania:");
         int result = scanner.nextInt();
-      //  scanner.close();
+        //  scanner.close();
         return result;
     }
 
@@ -35,8 +35,8 @@ public class DebugExample {
     }
 
     private static void multiplyAllNumbersBy(int[] array, int multiplier) {
-        for (int number : array) {
-            number = number * multiplier;
+        for (int i = 0; i < array.length; i++) {
+            array[i] = array[i] * multiplier;
         }
     }
 
