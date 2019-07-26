@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class EvenAdder {
     public static void main(String[] args) {
         int[] array = createEvenArray(5);
-        reverseArray(array);
-        System.out.println(Arrays.toString(array));
+        int[] revesedArray = reverseArray(array);
+        System.out.println(Arrays.toString(revesedArray));
     }
 
     /**
@@ -21,8 +21,8 @@ public class EvenAdder {
             System.out.println("Podaj kolejną liczbę:");
             int next = scanner.nextInt();
             if (isEven(next)) {
-                next = result[i];
-            }else{
+                result[i] = next;
+            } else {
                 System.out.println("Podaj liczbę parzystą");
                 next = result[i--];
             }
@@ -47,9 +47,11 @@ public class EvenAdder {
      * @return - reversed array
      */
     private static int[] reverseArray(int[] array) {
+        int size = array.length;
         int[] reversed = new int[array.length];
         for (int i = 0; i < reversed.length; i++) {
-            array[i] = reversed[i];
+            reversed[size - 1] = array[i];
+            size--;
         }
         return reversed;
     }
