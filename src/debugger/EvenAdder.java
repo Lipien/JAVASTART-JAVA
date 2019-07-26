@@ -20,19 +20,26 @@ public class EvenAdder {
         for (int i = 0; i < result.length; i++) {
             System.out.println("Podaj kolejną liczbę:");
             int next = scanner.nextInt();
-            if(isEven(next))
+            if (isEven(next)) {
                 next = result[i];
+            }else{
+                System.out.println("Podaj liczbę parzystą");
+                next = result[i--];
+            }
         }
         return result;
     }
 
     /**
-     *
      * @param number - number to be checked
      * @return true if number is even, or false otherwise
      */
     private static boolean isEven(int number) {
-        return number == 0;
+        if (number % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
