@@ -73,7 +73,7 @@ public class LibraryControl {
     }
 
     private void exit() {
-        System.out.println("Koniec programu, papa!");
+        System.out.println("Koniec programu, do widzenia!");
         // zamykamy strumień wejścia
         dataReader.close();
     }
