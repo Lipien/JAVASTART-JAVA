@@ -1,5 +1,7 @@
 package library.model;
 
+import java.util.Arrays;
+
 public class Library {
 
     private static final int MAX_PUBLICATONS = 2000;
@@ -48,5 +50,15 @@ public class Library {
         if (countMagazines == 0) {
             System.out.println("Brak magazynów w bibliotece");
         }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < publicationsNumber; i++) {
+            builder.append(publications[i]);
+            builder.append("\n");
+        }
+        return builder.toString();
     }
 }
