@@ -60,5 +60,19 @@ public class StringTest {
 
         String uc = pirateMessage.toUpperCase();
         System.out.println(uc);
+
+        byte a = 50;
+        System.out.println(a <<= 3);
+
+        Integer value1 = new Integer("312");
+        Integer value2 = new Integer("312");
+        System.out.println(value1.equals(value2));
+
+        int score = 10;
+        System.out.println("score" + score++);
+        System.out.println("score" + score);
+
+
+
     }
 }
