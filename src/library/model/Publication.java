@@ -2,7 +2,7 @@ package library.model;
 
 import java.util.Objects;
 
-class Publication {
+public class Publication {
 
     private String title;
     private String publisher;
