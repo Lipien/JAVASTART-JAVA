@@ -21,10 +21,10 @@ public class Test {
                 error = false;
             } catch (InputMismatchException ex) {
                 System.out.println("Nie podałeś liczby całkowitej, spróbuj jeszcze raz: ");
-                sc.nextLine();
             } catch (ArrayIndexOutOfBoundsException ex) {
                 System.out.println("Miało być 1 lub 2, zacznijmy od nowa: ");
-                sc.nextLine();
+            } finally {
+                sc.nextLine(); //wykona się zawsze, niezależnie, czy wyjątki wystąpią, czy nie
             }
         } while (error);
         sc.close();
