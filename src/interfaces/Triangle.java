@@ -1,13 +1,24 @@
 package interfaces;
 
-public class Rectangle implements Shape {
-
+public class Triangle implements Shape {
+    private double height;
     private double a;
     private double b;
+    private double c;
 
-    public Rectangle(double a, double b) {
+    public Triangle(double height, double a, double b, double c) {
+        this.height = height;
         this.a = a;
         this.b = b;
+        this.c = c;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
     }
 
     public double getA() {
@@ -26,22 +37,32 @@ public class Rectangle implements Shape {
         this.b = b;
     }
 
+    public double getC() {
+        return c;
+    }
+
+    public void setC(double c) {
+        this.c = c;
+    }
+
     @Override
     public double calculateArea() {
-        return a*b;
+        return a * height / 2;
     }
 
     @Override
     public double calculatePerimeter() {
-        return 2*a + 2*b;
+        return a + b + c;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Prostokąt, ");
+        sb.append("Trójkąt, ");
         sb.append("bok A: " + a + ", ");
         sb.append("bok B: " + b + ", ");
+        sb.append("bok B: " + c + ", ");
+        sb.append("wysokość: " + height + ", ");
         sb.append("pole: " + calculateArea() + ", ");
         sb.append("obwód: " + calculatePerimeter());
         return sb.toString();

@@ -25,4 +25,14 @@ public class Circle implements Shape {
     public double calculatePerimeter() {
         return 2 * Shape.PI * r;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Koło, ");
+        sb.append("promień: " + r + ", ");
+        sb.append("pole: " + calculateArea() + ", ");
+        sb.append("obwód: " + calculatePerimeter());
+        return sb.toString();
+    }
 }

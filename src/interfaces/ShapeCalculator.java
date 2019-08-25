@@ -1,11 +1,99 @@
 package interfaces;
 
-public class ShapeCalculator {
-    public static void main(String[] args) {
-        Shape circle = new Circle(5);
-        Shape rect = new Rectangle(5, 10);
+import java.util.InputMismatchException;
+import java.util.Locale;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 
-        System.out.println("Pole koła: " + circle.calculateArea());
-        System.out.println("Obwód prostokąta: " + rect.calculatePerimeter());
+public class ShapeCalculator {
+    private Scanner sc = new Scanner(System.in);
+
+    public ShapeCalculator() {
+        sc.useLocale(Locale.US);
+    }
+
+    public void closeScanner() {
+        sc.close();
+    }
+
+    public Rectangle readRectangleleData() throws InputMismatchException {
+        System.out.println("Podaj informacje o prostokącie.");
+        System.out.println("Podaj długość boku A: ");
+        double a = 0;
+        double b = 0;
+        try {
+            a = sc.nextDouble();
+            sc.nextLine();
+            System.out.println("Podaj długość boku B: ");
+            b = sc.nextDouble();
+            sc.nextLine();
+        } catch (InputMismatchException e) {
+            sc.nextLine();
+            throw e;
+        }
+
+        return new Rectangle(a, b);
+    }
+
+    public Circle readCircleData() throws InputMismatchException {
+        System.out.println("Podaj informacje o kole.");
+        System.out.println("Podaj długość promienia: ");
+        double r = 0;
+        try {
+            r = sc.nextDouble();
+            sc.nextLine();
+        } catch (InputMismatchException e) {
+            sc.nextLine();
+            throw e;
+        }
+
+        return new Circle(r);
+    }
+
+    public Triangle readTriangleData() throws InputMismatchException {
+        System.out.println("Podaj informacje o trójkącie.");
+        System.out.println("Podaj długość boku A: ");
+        double a = 0;
+        double b = 0;
+        double c = 0;
+        double h = 0;
+        try {
+            a = sc.nextDouble();
+            sc.nextLine();
+            System.out.println("Podaj długość boku B: ");
+            b = sc.nextDouble();
+            sc.nextLine();
+            System.out.println("Podaj długość boku C: ");
+            c = sc.nextDouble();
+            sc.nextLine();
+            System.out.println("Podaj wysokość opadającą na bok A: ");
+            h = sc.nextDouble();
+            sc.nextLine();
+        } catch (InputMismatchException e) {
+            sc.nextLine();
+            throw e;
+        }
+
+        return new Triangle(a, b, c, h);
+    }
+
+    public Shape createShape() throws NoSuchElementException, InputMismatchException {
+        try {
+            int shapeType = sc.nextInt();
+            sc.nextLine();
+            switch (shapeType) {
+                case Shape.RECTANGLE:
+                    return readRectangleleData();
+                case Shape.CIRCLE:
+                    return readCircleData();
+                case Shape.TRIANGLE:
+                    return readTriangleData();
+                default:
+                    throw new NoSuchElementException();
+            }
+        } catch (InputMismatchException e) {
+            sc.nextLine();
+            throw e;
+        }
     }
 }
