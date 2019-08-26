@@ -6,7 +6,7 @@ public class Person implements Serializable {
 
     private static final long serialVersionUID = 3812017177088226528L;
 
-    private String firstName;
+    private transient String firstName;
     private String lastName;
 
     public String getFirstName() {
