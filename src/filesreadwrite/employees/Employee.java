@@ -2,6 +2,7 @@ package filesreadwrite.employees;
 
 public class Employee extends Person {
 
+    private static final long serialVersionUID = 4420226460862818754L;
     private int salary;
 
     public Employee(String firstName, String lastName, int salary) {
@@ -19,8 +20,6 @@ public class Employee extends Person {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "salary=" + salary +
-                '}';
+        return super.toString() + ", wypłata " + salary;
     }
 }

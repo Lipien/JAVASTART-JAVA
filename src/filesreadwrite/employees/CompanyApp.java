@@ -15,7 +15,7 @@ public class CompanyApp {
         Employee[] employees = {employee1, employee2, employee3};
 
         String fileName = "testFile.txt";
-        Company company = new Company(employees);
+        Company company = new Company();
 
         try (
                 var fs = new FileOutputStream(fileName);

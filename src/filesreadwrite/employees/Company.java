@@ -1,15 +1,12 @@
 package filesreadwrite.employees;
 
 import java.io.Serializable;
-import java.util.Arrays;
 
 public class Company implements Serializable {
 
-    private Employee[] employees;
-
-    public Company(Employee[] employees) {
-        this.employees = employees;
-    }
+    private static final long serialVersionUID = -7425273230264572679L;
+    public static final int EMPLOYEES = 3;
+    private Employee[] employees = new Employee[EMPLOYEES];
 
     public Employee[] getEmployees() {
         return employees;
@@ -17,12 +14,5 @@ public class Company implements Serializable {
 
     public void setEmployees(Employee[] employees) {
         this.employees = employees;
-    }
-
-    @Override
-    public String toString() {
-        return "Company{" +
-                "employees=" + Arrays.toString(employees) +
-                '}';
     }
 }
