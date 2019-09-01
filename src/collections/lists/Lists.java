@@ -1,12 +1,12 @@
 package collections.lists;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Lists {
     public static void main(String[] args) {
-        ArrayList<Integer> ints = new ArrayList<>();
+        LinkedList<Double> ints = new LinkedList<>();
 
-        for (int i = 0; i < 100; i++) {
+        for (double i = 0; i < 100; i++) {
             ints.add(i); // obiekty Integer, nie int!
         }
 
