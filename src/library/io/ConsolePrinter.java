@@ -1,15 +1,18 @@
 package library.io;
 
 import library.model.Book;
+import library.model.LibraryUser;
 import library.model.Magazine;
 import library.model.Publication;
 
-public class ConsolePrinter {
+import java.util.Collection;
 
-    public void printBooks(Publication[] publications) {
+public class ConsolePrinter {
+    //zmiana typu parametru
+    public void printBooks(Collection<Publication> publications) {
         int counter = 0;
         for (Publication publication : publications) {
-            if(publication instanceof Book) {
+            if (publication instanceof Book) {
                 printLine(publication.toString());
                 counter++;
             }
@@ -18,16 +21,23 @@ public class ConsolePrinter {
             printLine("Brak książek w bibliotece");
     }
 
-    public void printMagazines(Publication[] publications) {
+    //zmiana typu parametru
+    public void printMagazines(Collection<Publication> publications) {
         int counter = 0;
         for (Publication publication : publications) {
-            if(publication instanceof Magazine) {
+            if (publication instanceof Magazine) {
                 printLine(publication.toString());
                 counter++;
             }
         }
         if (counter == 0)
             printLine("Brak magazynów w bibliotece");
+    }
+
+    public void printUsers(Collection<LibraryUser> users) {
+        for (LibraryUser user : users) {
+            printLine(user.toString());
+        }
     }
 
     public void printLine(String text) {

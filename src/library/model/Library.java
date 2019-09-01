@@ -1,34 +1,54 @@
 package library.model;
 
+import library.exception.PublicationAlreadyExistsException;
+import library.exception.UserAlreadyExistsException;
+
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Library  implements Serializable {
+public class Library implements Serializable {
 
-    private static final int MAX_PUBLICATONS = 2000;
-    private int publicationsNumber;
-    private Publication[] publications = new Publication[MAX_PUBLICATONS];
+    //zmieniony typ
+    private Map<String, Publication> publications = new HashMap<>();
+    //dodane
+    private Map<String, LibraryUser> users = new HashMap<>();
 
-    public Publication[] getPublications() {
-        Publication[] result = new Publication[publicationsNumber];
-        for (int i = 0; i < publicationsNumber; i++) {
-            result[i] = publications[i];
-        }
-        return result;
+    //zmieniony typ zwracany
+    public Map<String, Publication> getPublications() {
+        return publications;
     }
 
-    public void addBook(Book book) {
-        addPublication(book);
+    //dodany getter
+    public Map<String, LibraryUser> getUsers() {
+        return users;
     }
 
-    public void addMagazine(Magazine magazine) {
-        addPublication(magazine);
+    //dodana metoda i rzucany nowy typ wyjątku
+    public void addUser(LibraryUser user) {
+        if(users.containsKey(user.getPesel()))
+            throw new UserAlreadyExistsException(
+                    "Użytkownik ze wskazanym peselem już istnieje " + user.getPesel()
+            );
+        users.put(user.getPesel(), user);
     }
 
+    //zmieniona logika
     public void addPublication(Publication publication) {
-        if (publicationsNumber >= MAX_PUBLICATONS) {
-            throw new ArrayIndexOutOfBoundsException("Max publications exceeded " + MAX_PUBLICATONS);
+        if(publications.containsKey(publication.getTitle()))
+            throw new PublicationAlreadyExistsException(
+                    "Publikacja o takim tytule już istnieje " + publication.getTitle()
+            );
+        publications.put(publication.getTitle(), publication);
+    }
+
+    //zmieniona logika
+    public boolean removePublication(Publication publication) {
+        if(publications.containsValue(publication)) {
+            publications.remove(publication.getTitle());
+            return true;
+        } else {
+            return false;
         }
-        publications[publicationsNumber] = publication;
-        publicationsNumber++;
     }
 }
