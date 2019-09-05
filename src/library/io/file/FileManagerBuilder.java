@@ -5,6 +5,7 @@ import library.io.ConsolePrinter;
 import library.io.DataReader;
 
 public class FileManagerBuilder {
+
     private ConsolePrinter printer;
     private DataReader reader;
 

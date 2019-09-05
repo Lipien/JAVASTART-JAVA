@@ -10,6 +10,7 @@ import java.util.Collection;
 import java.util.Scanner;
 
 public class CsvFileManager implements FileManager {
+
     private static final String PUBLICATIONS_FILE_NAME = "Library.csv";
     private static final String USERS_FILE_NAME = "Library_users.csv";
 

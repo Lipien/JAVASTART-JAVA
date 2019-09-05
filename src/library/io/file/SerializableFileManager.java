@@ -7,6 +7,7 @@ import library.model.Library;
 import java.io.*;
 
 public class SerializableFileManager implements FileManager {
+
     private static final String FILE_NAME = "Library.o";
 
     @Override

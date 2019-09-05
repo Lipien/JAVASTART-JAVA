@@ -3,13 +3,12 @@ package library.model;
 import java.util.Objects;
 
 public class Book extends Publication {
-    // Pola
+
     private String author;
     private int pages;
     private String isbn;
     public static final String TYPE = "Książka";
 
-    // Konstruktory
     public Book(String title, String author, int year, int pages, String publisher,
                 String isbn) {
         super(title, publisher, year);
@@ -18,7 +17,6 @@ public class Book extends Publication {
         this.isbn = isbn;
     }
 
-    // settery i gettery
     public String getIsbn() {
         return isbn;
     }

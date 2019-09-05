@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public abstract class Publication implements Serializable, Comparable<Publication>, CsvConvertible {
+
     private String title;
     private String publisher;
     private int year;
