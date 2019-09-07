@@ -1,6 +1,8 @@
 package optional;
 
 import java.util.Optional;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class PersonTest {
     public static void main(String[] args) {
@@ -25,6 +27,9 @@ public class PersonTest {
                 p -> System.out.println(p.getLastName()),
                 () -> System.out.println("Brak obiektu o wskazanym id")
         );
+
+        Consumer<String> napis1 = (s) -> System.out.println(s);
+        napis1.accept("coco");
     }
 }
 
