@@ -20,8 +20,8 @@ public class Pizza {
         }
     }
 
-    private Pizza(List<String> ingredients) {
-        this.ingredients = new ArrayList<>(ingredients);
+    public Pizza(List<String> ingredients) {
+        this.ingredients = ingredients;
     }
 
     public List<String> getIngredients() {
