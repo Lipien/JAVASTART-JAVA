@@ -9,10 +9,10 @@ public class App {
         for (int i = 0; i <= 3; i++) {
             if (i % 2 == 0) {
                 str.concat("s");
-                str.substring(str.length() - 1).toLowerCase();
+                str.toLowerCase();
             } else {
                 str.concat("s");
-                str.substring(str.length() - 1).toUpperCase();
+                str.toUpperCase();
             }
         }
         System.out.println(str);
